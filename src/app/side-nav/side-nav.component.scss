@@ -1,0 +1,86 @@
+@import '../../assets/variables';
+@import '../../assets/typography';
+
+nav.navigation {
+  background-color: $c-black;
+  color: $c-cool-gray-3;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  &.wide {
+    & > ul > li > .nav-label {
+      display: inline-block;
+    }
+    & > .brand > .brand-logo {
+      display: inline-block;
+    }
+  }
+
+  & > .brand {
+    height: 64px;
+    cursor: pointer;
+    & > .toggle {
+      display: inline-block;
+      background-image: url('/assets/svg/menu.svg');
+      width: 24px;
+      height: 24px;
+      margin: 16px 24px 24px 24px;
+      filter: invert(100%);
+      cursor: pointer;
+    }
+    & > .brand-logo {
+      display: none;
+      vertical-align: top;
+      margin-top: 18px;
+      margin-left: -9px;
+      width: 71px;
+      height: 20px;
+      background-image: url('/assets/svg/rokt-logo.svg');
+      background-size: cover;
+      filter: invert(100%);
+      cursor: pointer;
+    }
+  }
+
+  & > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-grow: 0;
+
+    & > li {
+      box-sizing: border-box;
+      cursor: pointer;
+      display: block;
+      font-size: 24px;
+      height: 40px;
+      border: 0 solid transparent;
+      border-left-width: 4px;
+      margin: 0 0 8px 0;
+      padding: 8px 20px 8px 20px;
+      &:last-child {
+        margin-bottom: 24px;
+      }
+      &:hover {
+        border-left-color: $c-primary-blue;
+        background-color: $c-cool-gray-1;
+      }
+      & > .nav-label {
+        display: none;
+        @include t-body;
+        vertical-align: top;
+        margin: 3px 0 3px 20px;
+      }
+    }
+  }
+
+  & > .spacer {
+    flex-grow: 9999;
+  }
+}

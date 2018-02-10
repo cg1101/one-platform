@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import '/assets/variables';
+@import '/assets/typography';
+@import '/assets/icons';
+
+body {
+  font-family: $default-font;
+  @include t-body;
+}

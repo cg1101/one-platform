@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'Soleil';
+  src: url('/assets/fonts/Soleil-Regular.otf'),
+  url('/assets/fonts/soleil-regular-webfont.woff2') format('woff2'),
+  url('/assets/fonts/soleil-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Soleil';
+  src: url('/assets/fonts/Soleil-Bold.otf'),
+  url('/assets/fonts/soleil-bold-webfont.woff2') format('woff2'),
+  url('/assets/fonts/soleil-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Font
+$default-font: Soleil, 'Source Sans Pro', sans-serif;
+
+$font-weight-bold: 700;
+$font-weight-regular: 400;
+
+$text-display-size: 42px;
+$text-display-line-height: 54px;
+
+$text-headline-size: 28px;
+$text-headline-line-height: 36px;
+
+$text-title-size: 20px;
+$text-title-line-height: 32px;
+
+$text-subheader-size: 16px;
+$text-subheader-line-height: 24px;
+
+$text-body-size: 14px;
+$text-body-line-height: 18px;
+
+$text-caption-size: 12px;
+$text-caption-line-height: 16px;
+$text-caption-letter-spacing: 0.86px;
+
+$text-small-size: 10px;
+$text-small-line-height: 16px;
+
+@mixin t-display {
+  font-size: $text-display-size; // 42px
+  line-height: $text-display-line-height; // 54px 1.2857142857142858
+}
+
+@mixin t-headline {
+  font-size: $text-headline-size; // 28px;
+  line-height: $text-headline-line-height; //36px 1.2857142857142858
+}
+
+@mixin t-title {
+  font-size: $text-title-size; // 20px;
+  line-height: $text-title-line-height; // 32px 1.6
+}
+
+@mixin t-subheader {
+  font-size: $text-subheader-size; // 16px;
+  line-height: $text-subheader-line-height; // 24px 1.5
+}
+
+@mixin t-body {
+  font-size: $text-body-size; // 14px;
+  line-height: $text-body-line-height; // 18px 1.2857142857142858
+}
+
+@mixin t-caption {
+  font-size: $text-caption-size; // 12px;
+  letter-spacing: $text-caption-letter-spacing; // 0.86px;
+  line-height: $text-caption-line-height; // 16px 1.3333333333333333
+  text-transform: uppercase;
+}
+
+@mixin t-small {
+  font-size: $text-small-size; // 10px;
+  line-height: $text-small-line-height; // 16px 1.6
+}
+
+b, .bold {
+  font-weight: $font-weight-bold;
+}
+
+h1, .h1, .t-display {
+  @include t-display;
+}
+
+.t-display-bold {
+  @include t-display;
+}
+
+h2, .h2, .t-headline {
+  @include t-headline;
+}
+
+h3, .h3, .t-title {
+  @include t-title;
+}
+
+h4, .h4, .t-subheader {
+  @include t-subheader;
+}
+
+.t-body {
+  @include t-body;
+}
+
+h5, .h5, .t-caption {
+  @include t-caption;
+}
+
+h6, .h6, small, .small, .t-small {
+  @include t-small;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.text-success {
+  //color: $c-positive;
+}
+
+.text-danger {
+  //color: $c-warn-large;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
