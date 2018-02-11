@@ -372,12 +372,17 @@ ul.top-nav {
   background-color: $c-cool-gray-0;
   overflow-y: auto;
   z-index: 1;
+  overflow: visible;
+  & > #side-content {
+    min-height: 800px;
+  }
 }
 
 .auto {
   display: none;
 }
 
+/*
 #screen.notification {
   & .auto.notification {
     display: block;
@@ -395,6 +400,7 @@ ul.top-nav {
     display: block;
   }
 }
+*/
 
 :host {
   :host.info {
