@@ -3,6 +3,7 @@
 @import '/assets/icons';
 
 body {
+  margin: 0 0px 40px 0;
   font-family: $default-font;
   @include t-body;
 }

@@ -1,7 +1,7 @@
 @import '../../assets/variables';
 @import '../../assets/typography';
 
-nav.navigation {
+:host {
   background-color: $c-black;
   color: $c-cool-gray-3;
   height: 100%;
@@ -14,6 +14,7 @@ nav.navigation {
   justify-content: space-between;
 
   &.wide {
+    width: 205px;
     & > ul > li > .nav-label {
       display: inline-block;
     }

@@ -1,6 +1,5 @@
-<nav class="navigation" [ngClass]="{wide:wide}">
-<div class="brand" (click)="wide=!wide">
-  <span class="toggle"></span>
+<div class="brand">
+  <span class="toggle" (click)="toggleLabel()"></span>
   <span class="brand-logo"></span>
 </div>
 <ul>
@@ -32,4 +31,3 @@
     <i class="op op-icon-feedback"></i><span class="nav-label">Feedback</span>
   </li>
 </ul>
-</nav>
