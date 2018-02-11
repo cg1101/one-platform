@@ -156,8 +156,8 @@ ul.top-nav {
 
     &.notification, &.bookmark, &.history {
       &:hover {
-        background-color: $c-cool-gray-0;
-        color: $c-cool-gray-4;
+        //background-color: $c-cool-gray-0;
+        //color: $c-cool-gray-4;
       }
     }
   }
@@ -393,5 +393,23 @@ ul.top-nav {
 #screen.history {
   .auto.history {
     display: block;
+  }
+}
+
+:host {
+  :host.info {
+    & > #side-info {
+      display: block;
+    }
+  }
+  &.info-notification .notification, &.info-bookmark .bookmark, &.info-history .history {
+    display: block;
+    & > a {
+      background-color: $c-cool-gray-0;
+      color: $c-cool-gray-4;
+      & > i.op {
+        filter: invert(100%);
+      }
+    }
   }
 }

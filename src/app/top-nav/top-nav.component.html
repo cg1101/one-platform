@@ -241,7 +241,7 @@
   </li>
   <li class="notification" onmouseenter="void toggle('notification', true);"
       onmouseleave="void toggle('notification', false);">
-    <a>
+    <a (click)="toggleInfo('notification')">
       <i class="op op-icon-notifications"></i>
     </a>
     <div class="my-dropdown-menu pull-right dark-menu notification-menu">
@@ -302,7 +302,7 @@
   </li>
   <li class="bookmark" onmouseenter="void toggle('bookmark', true);"
       onmouseleave="void toggle('bookmark', false);">
-    <a>
+    <a (click)="toggleInfo('bookmark')">
       <i class="op op-icon-bookmarks"></i>
     </a>
     <div class="my-dropdown-menu pull-right dark-menu">
@@ -336,7 +336,7 @@
   </li>
   <li class="history" onmouseenter="void toggle('history', true);"
       onmouseleave="void toggle('history', false);">
-    <a>
+    <a (click)="toggleInfo('history')">
       <i class="op op-icon-history"></i>
     </a>
     <div class="my-dropdown-menu pull-right dark-menu">
