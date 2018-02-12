@@ -17,28 +17,28 @@ ul.top-nav {
   // flex-grow factors
   & > li {
     &.account-selector {
-      flow-grow: 1;
+      flex-grow: 0;
     }
     &.search-box {
-      flow-grow: 1;
+      flex-grow: 1;
     }
     &.date-picker {
-      flow-grow: 0;
+      flex-grow: 0;
     }
     &.segment-picker {
-      flow-grow: 0;
+      flex-grow: 0;
     }
     &.user-menu {
-      flow-grow: 0;
+      flex-grow: 0;
     }
     &.notification {
-      flow-grow: 0;
+      flex-grow: 0;
     }
     &.bookmark {
-      flow-grow: 0;
+      flex-grow: 0;
     }
     &.history {
-      flow-grow: 0;
+      flex-grow: 0;
     }
   }
 
