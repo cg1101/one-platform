@@ -3,29 +3,9 @@
   <a class="brand-logo" href="/"></a>
 </div>
 <ul>
-  <li>
-    <a routerLink="/dashboard">
-      <i class="op op-icon-dashboard"></i><span class="nav-label">Dashboard</span>
-    </a>
-  </li>
-  <li>
-    <a routerLink="/campaigns">
-      <i class="op op-icon-campaign"></i><span class="nav-label">Campaigns</span>
-    </a>
-  </li>
-  <li>
-    <a routerLink="/placements">
-      <i class="op op-icon-placement"></i><span class="nav-label">Placements</span>
-    </a>
-  </li>
-  <li>
-    <a routerLink="/customers">
-      <i class="op op-icon-customer-data"></i><span class="nav-label">Customers & Data</span>
-    </a>
-  </li>
-  <li>
-    <a routerLink="/reports">
-      <i class="op op-icon-reports"></i><span class="nav-label">Reports</span>
+  <li *ngFor="let n of nodes">
+    <a routerLink="{{n.link}}">
+      <i class="op" [ngClass]="'op-icon-' + n.icon"></i><span class="nav-label">{{n.label}}</span>
     </a>
   </li>
 </ul>

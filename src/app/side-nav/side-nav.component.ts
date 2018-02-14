@@ -1,5 +1,7 @@
-import { Component, OnInit, HostBinding, Self } from '@angular/core';
+import {Component, OnInit, HostBinding, Self, Input} from '@angular/core';
 import { NgClass } from '@angular/common';
+
+import { NavigationNode } from './navigation-node';
 
 @Component({
   selector: 'op-side-nav',
@@ -10,6 +12,7 @@ import { NgClass } from '@angular/common';
 export class SideNavComponent implements OnInit {
 
   wide: boolean;
+  @Input() nodes: NavigationNode[];
 
   constructor(@Self() private ngClass: NgClass) {
     this.wide = true;
@@ -27,5 +30,4 @@ export class SideNavComponent implements OnInit {
     this.ngClass.ngClass = {wide: this.wide};
     this.ngClass.ngDoCheck();
   }
-
 }
