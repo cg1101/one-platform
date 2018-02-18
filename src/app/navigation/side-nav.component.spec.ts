@@ -1,40 +1,32 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {NgClass} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {RouterTestingModule} from '@angular/router/testing';
-import {Observable} from 'rxjs/Observable';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {Subject} from 'rxjs/Subject';
 
 import {SideNavComponent} from './side-nav.component';
-import {NavButtonComponent} from './nav-button.component';
 import {MyRouteManager} from './my-route-manager.service';
 import {NavigationNode} from './navigation-node';
 
 describe('SideNavComponent', () => {
-  let comp: SideNavComponent;
+  let component: SideNavComponent;
   let fixture: ComponentFixture<SideNavComponent>;
 
   const mockRouteManager = {
-    url$: Observable.from([
-      // '/dashboard'
-    ]),
+    url$: new Subject(),
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FormsModule,
-        RouterTestingModule.withRoutes([]),
-      ],
       declarations: [
         SideNavComponent,
-        NavButtonComponent,
       ],
       providers: [
-        NgClass,
         {
           provide: MyRouteManager,
           useValue: mockRouteManager,
         }
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA,
       ]
     })
       .compileComponents();
@@ -42,9 +34,8 @@ describe('SideNavComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SideNavComponent);
-    comp = fixture.componentInstance;
-    fixture.detectChanges();
-    comp.nodes = [
+    component = fixture.componentInstance;
+    component.nodes = [
       (<NavigationNode>{
         path: '/dashboard',
         label: 'Dashboard',
@@ -61,7 +52,7 @@ describe('SideNavComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
-    expect(comp).toBeTruthy();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

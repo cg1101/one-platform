@@ -23,6 +23,7 @@ export class SideNavComponent implements OnInit {
 
   constructor(@Self() private ngClass: NgClass, elm: ElementRef, private mgr: MyRouteManager) {
     this._collapsed = elm.nativeElement.className.indexOf('collapsed') >= 0;
+    mgr.url$.subscribe(url => this.updateActiveNode(url));
   }
 
   private loadNodes(nodes: NavigationNode[]) {
@@ -30,7 +31,6 @@ export class SideNavComponent implements OnInit {
     this.bottomNodes.length = 0;
     this.nodeByPath = {};
     nodes.forEach(_node => {
-      console.log('copying node:', _node);
       const node = Object.assign({}, _node);
 
       const t = node.path.split('/').filter(s => {
@@ -49,12 +49,10 @@ export class SideNavComponent implements OnInit {
         this.nodeByPath[parentPath].children.push(node);
       }
     });
-    console.log('loadNodes finished');
   }
 
   ngOnInit() {
     this.loadNodes(this.nodes);
-    this.mgr.url$.subscribe(url => this.updateActiveNode(url));
   }
 
   findBestMatch(url: string): NavigationNode {
