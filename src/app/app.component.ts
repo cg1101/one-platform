@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 
-import {NavigationNode} from './side-nav/navigation-node';
-import {NavigationNodeService} from './side-nav/navigation-node.service';
+import {NavigationNode} from './navigation/navigation-node';
+import {NavigationNodeService} from './navigation/navigation-node.service';
+import {MyRouteManager} from './navigation/my-route-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,10 @@ export class AppComponent {
   title = 'app';
   nodes: NavigationNode[];
 
-  constructor(private svc: NavigationNodeService) {
+  constructor(private svc: NavigationNodeService, mgr: MyRouteManager) {
     this.nodes = svc.getNodes();
+    setTimeout(() => {
+      mgr.setUrl('/dashboard');
+    }, 100);
   }
 }

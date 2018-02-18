@@ -1,0 +1,3 @@
+<a [ngClass]="{active:node.active}" (click)="activate()" routerLink="{{getLink()}}">
+  <i class="op" [ngClass]="'op-icon-' + node.icon"></i><span>{{node.label}}</span>
+</a>

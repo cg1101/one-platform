@@ -1,9 +1,9 @@
-op-side-nav + #main {
-  margin: 0 0 0 72px;
+op-side-nav.collapsed + #main {
+  margin: 0 0 0 68px;
   background-color: lightgoldenrodyellow;
 }
 
-op-side-nav.wide + #main {
-  margin: 0 0 0 205px;
+op-side-nav + #main {
+  margin: 0 0 0 228px;
   background-color: lightgreen;
 }

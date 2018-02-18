@@ -1,0 +1,81 @@
+@import "../../assets/variables";
+
+:host {
+  position: absolute;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: inline-block; // display must be set otherwise background-color won't be applied
+  background-color: $c-black;
+  color: $c-cool-gray-4;
+
+  &.collapsed {
+    overflow: visible;
+    & > nav {
+      & > div.brand a.logo, & div.p.expanded > div.s {
+        display: none;
+      }
+    }
+  }
+
+  & > nav {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+    overflow: visible;
+
+    & > div {
+      flex: 0 0 auto;
+      &.brand {
+        height: 64px;
+        & > a.toggle {
+          display: inline-block;
+          margin: 16px 16px 24px 24px;
+          padding: 0;
+          box-sizing: border-box;
+          border: 0 solid transparent;
+          font-size: 24px;
+          cursor: pointer;
+        }
+        a.logo {
+          display: inline-block;
+          filter: invert(100%);
+          vertical-align: top;
+          margin: 18px 0;
+          padding: 0;
+          width: 71px;
+          height: 20px;
+          background-image: url(/assets/svg/rokt-logo.svg);
+          background-size: cover;
+          background-position: center;
+          border: 0 solid transparent;
+        }
+      }
+      &.spacer {
+        flex-grow: 999;
+      }
+    }
+
+    // primary pane
+    & > div.p {
+      margin-bottom: 8px;
+
+      &.expanded {
+        background-color: rgba($c-cool-gray-1, .15);
+        & > div.s {
+          display: block;
+        }
+      }
+
+      // secondary pane
+      div.s {
+        display: none;
+        & > * {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

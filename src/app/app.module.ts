@@ -4,23 +4,27 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 
+import { NavigationModule } from './navigation/navigation.module';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
-import { NavigationNodeService } from './side-nav/navigation-node.service';
+import { NavigationNodeService } from './navigation/navigation-node.service';
+import { MyRouteManager } from './navigation/my-route-manager.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
-    SideNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DashboardModule
+    NavigationModule,
+    DashboardModule,
   ],
-  providers: [NavigationNodeService],
+  providers: [
+    NavigationNodeService,
+    MyRouteManager,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

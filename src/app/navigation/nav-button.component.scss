@@ -1,0 +1,72 @@
+@import "../../assets/variables";
+
+:host {
+  display: block;
+
+  & > a {
+    display: block;
+    overflow: visible;
+    margin: 0;
+    padding: 8px 20px;
+    color: rgba($c-white, 0.8);
+    border: 0 solid transparent;
+    border-left-width: 4px;
+    text-decoration: none;
+    // uncomment following line to turn on all anchors
+    //background-color: rgba($c-cool-gray-1, .15);
+
+    & > i.op {
+      font-size: 24px;
+    }
+
+    & > span {
+      display: inline-block;
+      margin-left: 20px;
+      width: 140px;
+      position: relative;
+      top: -4px;
+    }
+
+    &:hover {
+      color: $c-primary-blue;
+      //background-color: rgba($c-cool-gray-1, .15);
+    }
+  }
+}
+
+:host-context(.collapsed) {
+
+  & > a > span {
+    display: none;
+  }
+
+  & > a:hover {
+    position: relative;
+    & > span {
+      display: inline-block;
+      width: inherit;
+      position: absolute;
+      box-sizing: border-box;
+      top: 8px;
+      left: 48px;
+      padding: 5px 20px 3px 20px;
+      color: rgba($c-white, 0.8);
+      background-color: rgba($c-black, 1);
+      border: 1px solid rgba($c-black, 1);
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+  }
+}
+
+:host-context(.s) {
+  a.active {
+    color: $c-primary-blue;
+  }
+}
+
+:host(.head.expanded) {
+  a {
+    border-left-color: $c-primary-blue;
+  }
+}
