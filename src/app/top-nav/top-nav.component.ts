@@ -20,14 +20,14 @@ export class TopNavComponent implements OnInit {
       notification: false,
       bookmark: false,
       history: false,
-    }
+    };
   }
 
   ngOnInit() {
   }
 
-  toggleInfo(key: string) : void {
-    var showInfo = false;
+  toggleInfo(key: string): void {
+    let showInfo = false;
     if (this.infoStub[key]) {
       this.infoStub.notification = false;
       this.infoStub.bookmark = false;

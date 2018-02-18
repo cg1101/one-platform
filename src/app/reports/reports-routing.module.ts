@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ReportDashboardComponent } from './report-dashboard/report-dashboard.component'
+import { ReportDashboardComponent } from './report-dashboard/report-dashboard.component';
 
 const routes: Routes = [
   {
