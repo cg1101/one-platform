@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: './placements/placements.module#PlacementsModule',
   },
   {
-    path: 'customers',
+    path: 'customer-data',
     loadChildren: './customers/customers.module#CustomersModule',
   },
   {
