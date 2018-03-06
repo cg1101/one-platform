@@ -1,0 +1,14 @@
+<div>
+  <div class="bg"></div>
+  <ul class="pivot" [ngClass]="{'mobile': mobileMode}">
+    <li class="label" *ngIf="showLabel()">
+      <span class="inner">{{label}}</span>
+    </li>
+    <li *ngFor="let p of tabs; index as index"
+        [ngClass]="{'active': index === activeIndex}"
+        (click)="selectTab(index)">
+      <span class="inner">{{p.label}}</span>
+      <span class="bar"></span>
+    </li>
+  </ul>
+</div>

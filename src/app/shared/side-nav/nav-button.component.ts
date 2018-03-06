@@ -4,8 +4,8 @@ import {NavigationNode} from './navigation-node';
 
 @Component({
   selector: 'op-nav-button',
-  templateUrl: './nav-button.component.html',
-  styleUrls: ['./nav-button.component.scss']
+  templateUrl: 'nav-button.component.html',
+  styleUrls: ['nav-button.component.scss']
 })
 export class NavButtonComponent {
   @Input() node: NavigationNode;

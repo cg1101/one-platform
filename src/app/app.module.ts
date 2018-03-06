@@ -1,29 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AppRoutingModule } from './app-routing.module';
 
-import { NavigationModule } from './navigation/navigation.module';
 import { AppComponent } from './app.component';
-import { TopNavComponent } from './top-nav/top-nav.component';
-import { NavigationNodeService } from './navigation/navigation-node.service';
-import { MyRouteManager } from './navigation/my-route-manager.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopNavComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NavigationModule,
+    CoreModule,
+    SharedModule,
     DashboardModule,
+    AppRoutingModule,
   ],
   providers: [
-    NavigationNodeService,
-    MyRouteManager,
   ],
   bootstrap: [AppComponent]
 })

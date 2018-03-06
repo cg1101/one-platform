@@ -1,0 +1,5 @@
+<span class="title t_subheader">{{header}}</span>
+<div>
+  <ng-content></ng-content>
+</div>
+<a *ngIf="linkLabel" class="btn link" (click)="onClick($event)">{{linkLabel}}<i class="op op-icon-right"></i></a>

@@ -1,0 +1,101 @@
+@import '../../../../assets/_variables';
+
+:host {
+  font-size: inherit;
+  display: inline-block;
+  position: relative;
+  & > .search-box-input {
+    input {
+      display: block;
+      width: 100%;
+      //font-size: inherit;
+      margin: 0;
+      padding: 0.25em 0.5em 0.15em 1.5em;
+      border: 1px $c-cool-gray-3 solid;
+      &::-moz-placeholder {
+        color: $c-cool-gray-1;
+      }
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $c-cool-gray-1;
+      }
+      &::-moz-placeholder { /*Firefox 19+ */
+        color: $c-cool-gray-1;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: $c-cool-gray-1;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        color: $c-cool-gray-1;
+      }
+      &[disabled] {
+        background-color: $c-cool-gray-3;
+        color: $c-cool-gray-2;
+      }
+      &:focus {
+        box-shadow: 0 0 1px 1px $c-primary-blue;
+        border-radius: 2px;
+        //outline-offset: -2px;
+        //outline: 5px auto rgb(77, 144, 254);
+      }
+    }
+    i.op {
+      position: absolute;
+      left: 0.25em;
+      top: 0.25em;
+    }
+  }
+  & > .search-box-result {
+    position: absolute;
+    display: none;
+    z-index: 1000;
+
+    & > .loading-indicator {
+      height: 24px;
+      border: 0 solid transparent;
+      text-align: center;
+      margin: 10px;
+      display: none;
+    }
+
+    & > .result-footer {
+      cursor: pointer;
+      &.no-more {
+        cursor: default;
+      }
+      & > .count {
+        display: none;
+      }
+      & > button {
+        display: none;
+      }
+    }
+  }
+}
+
+:host(.focused) {
+  & > div.search-box-input {
+    i.op {
+      filter: sepia(.5) saturate(10000%) hue-rotate(240deg);
+    }
+  }
+}
+
+:host(.dropdown.open) {
+  & > div.search-box-result {
+    display: block;
+  }
+}
+
+:host(.loading) {
+  & > div.search-box-result {
+    & > .result-body {
+      display: block;
+    }
+    & > .result-footer {
+      display: none;
+    }
+    & > .loading-indicator {
+      display: block;
+    }
+  }
+}

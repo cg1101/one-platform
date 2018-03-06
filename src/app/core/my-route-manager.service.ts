@@ -13,5 +13,4 @@ export class MyRouteManager {
   setUrl(url: string) {
     this.url$.next(url);
   }
-
 }

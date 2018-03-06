@@ -3,7 +3,7 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 
 import {SideNavComponent} from './side-nav.component';
-import {MyRouteManager} from './my-route-manager.service';
+import {MyRouteManager} from '../../core/my-route-manager.service';
 import {NavigationNode} from './navigation-node';
 
 describe('SideNavComponent', () => {
@@ -41,12 +41,14 @@ describe('SideNavComponent', () => {
         label: 'Dashboard',
         icon: 'dashboard',
         link: '/dashboard',
+
       }),
       (<NavigationNode>{
         path: '/campaign',
         label: 'Campaigns',
         icon: 'campaign',
         link: '/campaigns',
+
       }),
     ];
     fixture.detectChanges();

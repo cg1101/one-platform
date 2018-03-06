@@ -2,13 +2,13 @@ import {Component, OnInit, Input, Self, ElementRef} from '@angular/core';
 import {NgClass} from '@angular/common';
 
 import {NavigationNode} from './navigation-node';
-import {MyRouteManager} from './my-route-manager.service';
+import {MyRouteManager} from '../../core/my-route-manager.service';
 
 @Component({
   providers: [NgClass],
   selector: 'op-side-nav',
-  templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.scss']
+  templateUrl: 'side-nav.component.html',
+  styleUrls: ['side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
 
@@ -68,7 +68,7 @@ export class SideNavComponent implements OnInit {
   }
 
   updateActiveNode(url: string) {
-    console.log('SideNav: observed url change ==> ', url);
+    // console.log('SideNav: observed url change ==> ', url);
     const node: NavigationNode = this.findBestMatch(url);
     // console.log('best match returns', node);
     if (this.currentActivated === node) {

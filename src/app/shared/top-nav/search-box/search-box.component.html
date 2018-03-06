@@ -1,0 +1,19 @@
+<div class="search-box-input">
+  <i class="op op-icon-search"></i>
+  <input #input type="text" placeholder="{{placeholder }}" [disabled]="disabled$ | async">
+</div>
+<div #resultBox class="search-box-result">
+  <div class="result-body">
+    <!--user customizable result pane-->
+    <!--<ng-content></ng-content>-->
+    <ng-container *ngFor="let i of result">
+      <ng-template op-generic-item [item]="i" [searchText]="searchText$ | async"></ng-template>
+    </ng-container>
+  </div>
+  <div class="loading-indicator"><img src="/assets/loading-animation.gif" width="24" height="24"></div>
+  <div #footer class="result-footer" [ngClass]="nextUrl ? '' : 'no-more'">
+    <p class="count" *ngIf="result.length">Showing {{result.length}} items</p>
+    <p *ngIf="!result.length">No result found</p>
+    <button *ngIf="nextUrl" (click)="loadMore()">load more</button>
+  </div>
+</div>

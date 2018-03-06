@@ -19,4 +19,4 @@ import { NavButtonComponent } from './nav-button.component';
     NavButtonComponent,
   ]
 })
-export class NavigationModule { }
+export class SideNavModule { }

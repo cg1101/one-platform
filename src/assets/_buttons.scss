@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'typography';
+
+// common settings of anchors and buttons
+
+button, a.btn, a.op-anchor {
+  display: inline-block;
+
+  //@include t-body; // font-size: 14px
+  line-height: 2.2857143em; //32px;
+  font-size: inherit;
+  font-weight: $font-weight-bold;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0.5em; // 7px / 14px
+  height: 2.2857143em; // 32px / 14px
+  border: solid 0.07142357143em; // 1px / 14px;
+  border-radius: 0.2857143em; // 4px / 14px;
+
+  white-space: inherit;
+  overflow: hidden;
+
+  background-color: transparent;
+  color: $c-cool-gray-1;
+  border-color: transparent;
+
+  & > i.op {
+    font-size: 1.142857em;
+    position: relative;
+    top: 0.07142857em;
+  }
+  text-decoration: none;
+}
+
+button {
+  &, &.primary {
+    border-color: $c-primary-blue;
+    color: $c-white;
+    background-color: $c-primary-blue;
+    &[disabled] {
+      background-color: $c-cool-gray-3;
+      color: $c-cool-gray-2;
+      border-color: $c-cool-gray-3;
+    }
+  }
+  &.secondary {
+    background-color: $c-white;
+    color: $c-primary-blue;
+    border-color: $c-primary-blue;
+    &[disabled] {
+      background-color: $c-white;
+      color: $c-cool-gray-2;
+      border-color: $c-cool-gray-3;
+    }
+  }
+}
+
+a.btn, a.op-anchor {
+  border-radius: 0.2857143em; // 4px / 14px;
+  color: $c-cool-gray-0;
+  &:hover:not([disabled]) {
+    color: $c-primary-blue;
+  }
+
+  &[disabled] {
+    color: $c-cool-gray-2;
+    cursor: default;
+  }
+}
+
+.btn-group {
+  & > button {
+    float: left;
+
+    &:first-child {
+      &:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right-width: 0;
+      }
+    }
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  button + button[dropdown-toggle]{
+    padding: 0 0.25em;
+    &:not(.secondary), &.primary {
+      &:not([disabled]) {
+        border-left-color: #0C65B3;
+      }
+      &[disabled] {
+        border-left-color: $c-cool-gray-2;
+      }
+    }
+  }
+}

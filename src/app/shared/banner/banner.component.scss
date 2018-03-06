@@ -1,0 +1,45 @@
+@import '../../../assets/_variables';
+@import '../../../assets/_typography';
+
+:host {
+  margin-bottom: 16px;
+  padding: 6px 16px;
+  border-radius: 4px;
+
+  background-color: $c-cool-gray-0;
+  color: $c-white;
+  @include t-small;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    & > * {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    & > span:first-child {
+      flex: 0 0 auto;
+      @include t-title;
+      margin-right: 16px;
+    }
+    & > a:last-child {
+      @include t-body;
+      flex: 0 0 auto;
+      line-height: 33px;
+      color: $c-white;
+      text-decoration: none;
+      cursor: pointer;
+      & > i.op {
+        //font-size: 24px;
+      }
+    }
+    & > *:not(:first-child):not(:last-child) {
+      flex: 1 0 auto;
+    }
+}
+
+:host(.alert) {
+  background-color: $c-warn-large;
+}

@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 
-import {NavigationNode} from './navigation/navigation-node';
-import {NavigationNodeService} from './navigation/navigation-node.service';
-import {MyRouteManager} from './navigation/my-route-manager.service';
+import {NavigationNode} from './shared/side-nav/navigation-node';
+import {NavigationNodeService} from './core/navigation-node.service';
+import {MyRouteManager} from './core/my-route-manager.service';
 
 @Component({
   selector: 'app-root',

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-import {NavigationNode} from './navigation-node';
+import {NavigationNode} from '../shared/side-nav/navigation-node';
 
 @Injectable()
 export class NavigationNodeService {

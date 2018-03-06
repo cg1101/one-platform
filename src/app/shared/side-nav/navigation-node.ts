@@ -1,4 +1,4 @@
-export class NavigationNode {
+export interface NavigationNode {
   path?: string;
   label?: string;
   icon?: string;

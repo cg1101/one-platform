@@ -1,0 +1,81 @@
+<ul class="top-nav">
+
+  <!--account menu-->
+  <li class="account-menu" dropdown-hover-toggle>
+    <a>
+      <span class="t-subheader">{{ accountName$ | async}}</span>
+      <!--<span class="t-subheader">{{searchText$ | async}}</span>-->
+      <i #indicator class="op op-icon-down"></i>
+    </a>
+    <div class="dropdown-menu">
+      <op-account-menu></op-account-menu>
+    </div>
+  </li>
+
+  <!--search box-->
+  <li class="search-box">
+    <a>
+      <i class="op op-icon-search"></i>
+      <input #search type="text" placeholder="Search for [audiences, campaigns, creatives]….">
+      <!--<input #search type="text" [(ngModel)]="searchText" name="searchText"-->
+             <!--[formControl]="searchControl"-->
+             <!--placeholder="Search for [audiences, campaigns, creatives]....">-->
+    </a>
+  </li>
+
+  <!--date picker-->
+  <li class="date-picker" dropdown-hover-toggle>
+    <a>
+      <i class="op op-icon-calendar"></i>
+      <span class="t-subheader">{{dateOptions$ | async}}</span>
+      <span class="t-body">{{timeZone$ | async}}</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+      <op-date-picker></op-date-picker>
+    </div>
+  </li>
+
+  <!--segment picker-->
+  <li class="segment-picker" dropdown-hover-toggle>
+    <a>
+      <i class="op op-icon-segments"></i>
+      <span class="t-subheader">{{segmentOptions$ | async}}</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+      <op-segment-picker></op-segment-picker>
+    </div>
+  </li>
+
+  <!--user menu-->
+  <li class="user-menu" dropdown-hover-toggle>
+    <a>
+      <i class="op op-icon-user"></i>
+      <span class="t-subheader">{{userName$ | async}}</span>
+      <i #indicator class="op op-icon-down"></i>
+    </a>
+    <div class="dropdown-menu">
+      <op-user-menu></op-user-menu>
+    </div>
+  </li>
+
+  <!--notification-->
+  <li class="notification">
+    <a (click)="toggleInfo('notification')">
+      <i class="op op-icon-notifications"></i>
+    </a>
+  </li>
+
+  <!--bookmark-->
+  <li class="bookmark">
+    <a (click)="toggleInfo('bookmark')">
+      <i class="op op-icon-bookmarks"></i>
+    </a>
+  </li>
+
+  <!--history-->
+  <li class="history">
+    <a (click)="toggleInfo('history')">
+      <i class="op op-icon-history"></i>
+    </a>
+  </li>
+</ul>

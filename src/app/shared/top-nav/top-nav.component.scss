@@ -1,0 +1,177 @@
+@import '../../../assets/_variables';
+@import '../../../assets/_typography';
+
+$nav-button-size0: 240px;
+//$nav-button-size1: 408px;
+$nav-button-size2: 218px;
+$nav-button-padding: 24px;
+$nav-button-icon-width: 24px;
+$nav-button-span-padding: 8px;
+$nav-button-timezone-span-width: 48px;
+
+ul.top-nav {
+  position: relative;
+  z-index: 1200;
+
+  margin: 0 0 12px 0;
+  padding: 0;
+  background-color: $c-cool-gray-4;
+  box-shadow: 0 6px 12px 0 rgba(95, 101, 108, 0.1);
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+
+  & > li {
+    position: relative;
+    display: inline-block;
+    background-color: $c-white;
+    flex: 0 0 auto;
+
+    box-sizing: border-box;
+    &:not(:first-child) {
+      margin-left: 2px;
+    }
+
+    & > a {
+      font-size: 24px;
+      box-sizing: border-box;
+      border: 0 $c-cool-gray-4 solid;
+      //border-left-width: 2px;
+      display: block;
+      min-width: 24px;
+      height: 64px;
+      margin: 0;
+      padding: 20px $nav-button-padding;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      & > span {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 $nav-button-span-padding;
+        float: left;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &.t-subheader {
+          padding: 0;
+          font-weight: $font-weight-bold;
+        }
+        &.t-body {
+          padding: 4px 0 2px 0;
+        }
+      }
+      & > i.op {
+        margin: 0;
+        float: left;
+      }
+    }
+
+    &.account-menu {
+      & > a > span {
+        width: calc(#{$nav-button-size0} - #{$nav-button-padding} * 2 - #{$nav-button-icon-width} * 1 - #{$nav-button-span-padding} * 2);
+      }
+      & > a > i.op {
+        float: right;
+        filter: none;
+      }
+    }
+
+    &.search-box {
+      flex-grow: 1;
+      & > a {
+        min-width: 17em;
+        & > input {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0 20px 0 64px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          @include t-body;
+          background-color: transparent;
+
+          display: inline-block;
+          border: 1px solid transparent;
+          min-width: 22em;
+          color: $c-black;
+          vertical-align: top;
+          &:focus {
+            border-color: $c-primary-blue;
+            box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.065), 0 1px 15px rgba($c-primary-blue, 0.01);
+          }
+          font-family: $default-font;
+          &::-moz-placeholder {
+            color: $c-cool-gray-1;
+          }
+          &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: $c-cool-gray-1;
+          }
+          &::-moz-placeholder { /*Firefox 19+ */
+            color: $c-cool-gray-1;
+          }
+          &:-ms-input-placeholder { /* IE 10+ */
+            color: $c-cool-gray-1;
+          }
+          &:-moz-placeholder { /* Firefox 18- */
+            color: $c-cool-gray-1;
+          }
+        }
+      }
+    }
+
+    &.date-picker {
+      width: $nav-button-size2;
+      flex-basis: $nav-button-size2;
+      & > a > span {
+        &:not(:last-child) {
+          width: calc(#{$nav-button-size2} - #{$nav-button-padding} * 2 - #{$nav-button-icon-width} * 1 - #{$nav-button-span-padding} * 4 - #{$nav-button-timezone-span-width});
+        }
+        &:last-child {
+          width: $nav-button-timezone-span-width;
+          text-align: right;
+        }
+      }
+    }
+
+    &.segment-picker {
+      width: $nav-button-size2;
+      flex-basis: $nav-button-size2;
+      & > a > span {
+        width: calc(#{$nav-button-size2} - #{$nav-button-padding} * 2 - #{$nav-button-icon-width} * 1 - #{$nav-button-span-padding} * 2);
+      }
+    }
+
+    &.user-menu {
+      width: $nav-button-size2;
+      flex-basis: $nav-button-size2;
+      & > a > span {
+        width: calc(#{$nav-button-size2} - #{$nav-button-padding} * 2 - #{$nav-button-icon-width} * 2 - #{$nav-button-span-padding} * 2);
+      }
+    }
+
+    // icon variations
+    &.date-picker, &.segment-picker {
+      & > a > i.op {
+        filter: sepia(.5) saturate(10000%) hue-rotate(240deg);
+      }
+    }
+    &.user-menu, &.notification, &.bookmark, &.history {
+      & > a > i.op {
+        filter: invert(60%);
+      }
+      & > a > i.op {
+        &.op-icon-down, &.op-icon-up {
+          filter: none;
+          float: right;
+        }
+      }
+    }
+  }
+}
